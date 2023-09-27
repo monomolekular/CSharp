@@ -42,8 +42,9 @@ namespace ВтораяЧасть12Пр
         private void Program_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
-            DrawAxis(g);
             if (!_madeAction)
+            {
+                DrawAxis(g);
                 switch (_defaultProgram)
                 {
                     case "1":
@@ -59,6 +60,7 @@ namespace ВтораяЧасть12Пр
                         DrawTriangleByCords(g);
                         break;
                 }
+            }
         }
 
         private void DrawAxis(Graphics g)
