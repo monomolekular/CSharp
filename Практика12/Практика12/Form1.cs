@@ -7,20 +7,18 @@ namespace Практика12
 {
     public partial class Form1 : Form
     {
-        private readonly Random rnd = new Random();
+        private readonly Random _rnd = new Random();
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private List<string> makeNewCords()
+        private List<string> MakeNewCords()
         {
             var toReturn = new List<string>();
-            var tempX = rnd.Next(1, 799);
-            var temp2x = tempX + 1;
-            var tempY = rnd.Next(1, 599);
-            var temp2y = tempY + 1;
+            var tempX = _rnd.Next(1, 799);
+            var tempY = _rnd.Next(1, 599);
             for (var i = tempX - 1; i != tempX + 2; i++)
             for (var j = tempY - 1; j != tempY + 2; j++)
             {
@@ -33,7 +31,7 @@ namespace Практика12
 
         private void CreateStars(Graphics g)
         {
-            var starCounter = rnd.Next(1000, 2000);
+            var starCounter = _rnd.Next(1000, 2000);
             var createdStars = 0;
             var usedCords = new Dictionary<string, bool>();
             while (createdStars < starCounter)
@@ -42,7 +40,7 @@ namespace Практика12
                 var newCordsx16 = new List<string>();
                 while (!condition) // делает новые корды
                 {
-                    var tempCordsx16 = makeNewCords();
+                    var tempCordsx16 = MakeNewCords();
                     foreach (var key in tempCordsx16)
                         if (usedCords.ContainsKey(key))
                             break;
