@@ -7,3 +7,12 @@ Z:\Documents\Projects\c#projects\ВтораяЧасть12Пр\obj\Debug\Втор
 Z:\Documents\Projects\c#projects\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.pdb
 Z:\Documents\Projects\c#projects\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.Program.resources
 Z:\Documents\Projects\c#projects\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.csproj.GenerateResource.cache
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\bin\Debug\ВтораяЧасть12Пр.exe
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\bin\Debug\ВтораяЧасть12Пр.pdb
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.csproj.AssemblyReference.cache
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.csproj.SuggestedBindingRedirects.cache
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.Program.resources
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.csproj.GenerateResource.cache
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.csproj.CoreCompileInputs.cache
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.exe
+Z:\Documents\GitHub\CSharp\ВтораяЧасть12Пр\obj\Debug\ВтораяЧасть12Пр.pdb
