@@ -194,6 +194,9 @@ namespace ВтораяЧасть12Пр
             resources.ApplyResources(this, "$this");
             AutoValidate = AutoValidate.Disable;
             BackColor = SystemColors.Window;
+            ClientSize = new Size(784, 561);
+            SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.CenterScreen;
             CausesValidation = false;
             MaximizeBox = false;
             MinimizeBox = false;
