@@ -8,6 +8,7 @@ namespace Практика12
     public partial class Form1 : Form
     {
         private readonly Random _rnd = new Random();
+        private static int _k1, _k2, _k3, _k4;
 
         public Form1()
         {
@@ -60,13 +61,12 @@ namespace Практика12
         //     }
         // }
 
-        private double[] ChanceAdjustment(int korzinka,int k1 = 1, int k2 = 1, int k3 = 1, int k4 = 1)
+        private double[] ChanceAdjustment(int korzinka)
         {
             double[] chanses = new double[4];
             int[] invert = new int[4];
-            var temp = korzinka == 1 ? k1++ : korzinka == 2 ? k2++ : korzinka == 3 ? k3++ : korzinka > 4 ? 999 : k4++;
-            
-            int[] numbers = new[] {k1,k2,k3,k4};
+            int temp = korzinka == 1 ? _k1++ : korzinka == 2 ? _k2++ : korzinka == 3 ? _k3++ : korzinka > 4 ? 999 : _k4++;
+            int[] numbers = new[] {_k1,_k2,_k3,_k4};
             List<int> numbersSet = new List<int>();
             foreach (int iter in numbers)
             {
@@ -90,62 +90,78 @@ namespace Практика12
                 int num = numbers[i];
                 chanses[i] = percentPerUnit * numbersSet[numbersSet.Count - 1 - numbersSet.FindIndex(n => n == num )];
             }
-            
+
             return chanses;
         }
         
         private void CreateStars(Graphics g)
         {
-            int numberOfStars = _rnd.Next(300, 500);
+            _k1 = 1;
+            _k2 = 250;
+            _k3 = 250;
+            _k4 = 1;
+            int numberOfStars = _rnd.Next(250, 501);
             int starsCounter = 0;
             var ms1 = CreateCordsMap(1);
             var ms2 = CreateCordsMap(2);
             var ms3 = CreateCordsMap(3);
             var ms4 = CreateCordsMap(4);
-            var chances = ChanceAdjustment(5);
+            var unpackedData = ChanceAdjustment(5);
+            var chances = unpackedData;
             int x;
             int y;
             while (starsCounter < numberOfStars)
             {
-                int chance = _rnd.Next(1, 100);
-                //if (chance <= chances[0]) 
-                if (chance <= 34)
+                int chance = _rnd.Next(1, 101);
+                if (chance <= chances[0])
                 {
                     int rand = _rnd.Next(0, ms1.Count);
+                    int offsetX = _rnd.Next(0, 2);
+                    int offsetY = _rnd.Next(0, 2);
                     chances = ChanceAdjustment(1);
                     x = (ms1[rand][0]);
                     y = (ms1[rand][1]);
-                    g.DrawRectangle(Pens.White,x+1,y+1,1,1);
+                    g.DrawRectangle(Pens.White,x+offsetX,y+offsetY,1,1);
                     starsCounter++;
+                    ms1.Remove(ms1[rand]);
                 }
-                else if (chance <= 50)
-                //else if (chance <= chances[0] + chances[1])
+                //else if (chance <= 50)
+                else if (chance <= chances[0] + chances[1])
                 {
                     int rand = _rnd.Next(0, ms2.Count);
+                    int offsetX = _rnd.Next(0, 2);
+                    int offsetY = _rnd.Next(0, 2);
                     chances = ChanceAdjustment(2);
                     x = (ms2[rand][0]);
                     y = (ms2[rand][1]);
-                    g.DrawRectangle(Pens.White,x+1,y+1,1,1);
+                    g.DrawRectangle(Pens.White,x+offsetX,y+offsetY,1,1);
                     starsCounter++;
+                    ms2.Remove(ms2[rand]);
                 }
-                else if (chance <= 66)
-                //else if (chance <= chances[0] + chances[1] + chances[2])
+                //else if (chance <= 66)
+                else if (chance <= chances[0] + chances[1] + chances[2])
                 {
                     int rand = _rnd.Next(0, ms3.Count);
+                    int offsetX = _rnd.Next(0, 2);
+                    int offsetY = _rnd.Next(0, 2);
                     chances = ChanceAdjustment(3);
                     x = (ms3[rand][0]);
                     y = (ms3[rand][1]);
-                    g.DrawRectangle(Pens.White,x+1,y+1,1,1);
+                    g.DrawRectangle(Pens.White,x+offsetX,y+offsetY,1,1);
                     starsCounter++;
+                    ms3.Remove(ms3[rand]);
                 }
                 else
                 {
                     int rand = _rnd.Next(0, ms4.Count);
+                    int offsetX = _rnd.Next(0, 2);
+                    int offsetY = _rnd.Next(0, 2);
                     chances = ChanceAdjustment(4);
                     x = (ms4[rand][0]);
                     y = (ms4[rand][1]);
-                    g.DrawRectangle(Pens.White,x+1,y+1,1,1);
+                    g.DrawRectangle(Pens.White,x+offsetX,y+offsetY,1,1);
                     starsCounter++;
+                    ms4.Remove(ms4[rand]);
                 }
             }
         }
