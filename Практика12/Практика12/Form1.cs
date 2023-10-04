@@ -230,7 +230,6 @@ namespace Практика12
         {
             var g = e.Graphics;
             g.FillRectangle(Brushes.MidnightBlue, 0, 0, 800, 600); // небо
-            CreateStars(g);
             g.FillRectangle(Brushes.DarkGreen, 0, 400, 800, 200); // трава у дома
             g.DrawLine(Pens.Black, 0, 400, 800, 400);
             g.FillRectangle(Brushes.Brown, 225, 250, 249, 150); // стена дома
@@ -243,6 +242,7 @@ namespace Практика12
             g.DrawRectangle(Pens.Black, 375, 300, 50, 100);
             g.FillEllipse(Brushes.Gold, 415, 350, 5, 5);
             DrawRoof(g); // крышу запилить
+            CreateStars(g);
         }
 
         private void DrawRoof(Graphics g)
